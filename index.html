@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Forge Studio — Live Changelog (Supabase Realtime)</title>
+  <style>
+    :root{--accent:#6b4fd8;--bg:#0e0e16;--panel:#171722;--text:#ecebf7;--muted:#9a95b6;--border:#2a2a3c;
+          --feature:#6b4fd8;--fix:#e0564f;--improvement:#3fb27f;}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    .wrap{max-width:720px;margin:4rem auto;padding:0 1.5rem}
+    h1{font-size:2rem;letter-spacing:-.02em;margin-bottom:.25rem}
+    .sub{color:var(--muted);margin-bottom:.5rem}
+    .status{display:inline-flex;align-items:center;gap:.5rem;font-size:.85rem;color:var(--muted);
+            font-family:ui-monospace,monospace;margin-bottom:2rem}
+    .dot{width:9px;height:9px;border-radius:50%;background:#555;transition:background .2s}
+    .dot.live{background:var(--improvement);box-shadow:0 0 0 3px rgba(63,178,127,.2)}
+    .entry{border:1px solid var(--border);background:var(--panel);border-radius:12px;padding:1.1rem 1.25rem;margin-bottom:1rem;
+           animation:none}
+    .entry.flash{animation:flash 1.6s ease}
+    @keyframes flash{0%{border-color:var(--accent);box-shadow:0 0 0 2px rgba(107,79,216,.35)}100%{}}
+    .entry-head{display:flex;align-items:center;gap:.6rem;margin-bottom:.4rem}
+    .ver{font-family:ui-monospace,monospace;font-size:.85rem;color:var(--muted)}
+    .tag{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;padding:.15rem .5rem;border-radius:999px;font-weight:600}
+    .tag.feature{background:rgba(107,79,216,.18);color:#b4a4ff}
+    .tag.fix{background:rgba(224,86,79,.18);color:#ff9d97}
+    .tag.improvement{background:rgba(63,178,127,.18);color:#86e3b8}
+    .entry h2{font-size:1.05rem;margin-bottom:.25rem}
+    .entry p{color:var(--muted);font-size:.92rem}
+    .time{color:#6b6880;font-size:.78rem;margin-top:.5rem}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Changelog</h1>
+    <p class="sub">What's new in Forge Studio — updates appear here live, no reload.</p>
+    <p class="status"><span class="dot" id="dot"></span><span id="status-text">connecting…</span></p>
+    <div id="list"></div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
